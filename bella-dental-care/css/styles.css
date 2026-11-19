@@ -1,0 +1,190 @@
+:root {
+    --brand-cyan: #00AEEF;
+    --brand-pink: #E5007E;
+    --brand-dark: #0F172A;
+    --brand-bg: #F8FAFC;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--brand-bg);
+    color: #1E293B;
+    overflow-x: hidden;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #E5007E 0%, #00AEEF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #E5007E 0%, #00AEEF 100%);
+}
+
+.gradient-bg-reverse {
+    background: linear-gradient(135deg, #00AEEF 0%, #E5007E 100%);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.tooth-shadow {
+    filter: drop-shadow(0px 8px 16px rgba(0, 174, 239, 0.15));
+}
+
+/* Subtle Float / Pulse Animations */
+@keyframes subtlePulse {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-4px) scale(1.02);
+    }
+}
+
+.animate-subtle {
+    animation: subtlePulse 4.5s infinite ease-in-out;
+}
+
+/* Modal Transitions */
+.modal-backdrop {
+    transition: opacity 0.25s ease;
+}
+
+.modal-panel {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+/* Active Nav Link */
+.nav-link.active {
+    color: #E5007E;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    right: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #E5007E 0%, #00AEEF 100%);
+}
+
+/* Tooth Button States */
+.tooth-btn {
+    position: relative;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tooth-btn:hover {
+    transform: translateY(-2px);
+}
+
+.tooth-btn.selected {
+    border-color: #E5007E;
+    background-color: #FDF2F8;
+    color: #E5007E;
+    box-shadow: 0 4px 12px rgba(229, 0, 126, 0.2);
+}
+
+.tooth-btn.planned {
+    border-color: #00AEEF;
+    background-color: #F0F9FF;
+    color: #0369A1;
+}
+
+.tooth-btn.planned::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: #00AEEF;
+    box-shadow: 0 0 0 2px #FFFFFF;
+}
+
+.tooth-btn.selected.planned {
+    border-color: #E5007E;
+    background-color: #FDF2F8;
+    color: #E5007E;
+}
+
+/* Treatment Option Active */
+.treatment-btn.active {
+    border-color: #00AEEF;
+    background-color: rgba(0, 174, 239, 0.18);
+    box-shadow: 0 0 0 1px #00AEEF;
+}
+
+/* Department Tab Active Icon */
+.dept-tab.active .tab-icon {
+    color: #FFFFFF !important;
+}
+
+/* Implant Step Button Active */
+.implant-step-btn.active {
+    background-color: #00AEEF;
+    color: #0F172A;
+}
+
+/* FAQ Accordion */
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.open .faq-content {
+    max-height: 300px;
+}
+
+.faq-item.open .faq-chevron {
+    transform: rotate(180deg);
+}
+
+/* Toast Notification */
+#toast {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* Custom Range Slider */
+input[type="range"] {
+    height: 8px;
+    border-radius: 9999px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00AEEF;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E5007E;
+}
+
+/* Accessibility focus styles */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid #00AEEF;
+    outline-offset: 2px;
+}

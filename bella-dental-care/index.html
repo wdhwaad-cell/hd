@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="عيادة بيلا لطب وتجميل الأسنان في عنكاوا - أربيل | زراعة الأسنان، تقويم الأسنان، ابتسامة هوليود، تبييض الأسنان بالليزر وعلاج الجذور.">
+    <title>عيادة بيلا لطب وتجميل الأسنان | Bella Dental Care - عنكاوا أربيل</title>
+    <link rel="icon" type="image/png" href="assets/bella-favicon.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Cairo & Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#00AEEF',
+                            pink: '#E5007E',
+                            dark: '#0F172A',
+                            accentBg: '#F8FAFC',
+                            pinkLight: '#FDF2F8',
+                            cyanLight: '#F0F9FF'
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        tajawal: ['Tajawal', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'glow-pink': '0 10px 25px -5px rgba(229, 0, 126, 0.35)',
+                        'glow-cyan': '0 10px 25px -5px rgba(0, 174, 239, 0.35)',
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-40 glass-card transition-all duration-300 shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#top" class="flex items-center gap-3 group" aria-label="عيادة بيلا لطب الأسنان - الصفحة الرئيسية">
+                    <img src="assets/bella-logo.png" alt="شعار عيادة بيلا لطب الأسنان - Bella Dental Care" class="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-7 font-semibold text-slate-700 text-sm" aria-label="التنقل الرئيسي">
+                    <a href="#about" class="nav-link hover:text-brand-pink transition-colors">عن العيادة</a>
+                    <a href="#founders" class="nav-link hover:text-brand-pink transition-colors">الأطباء المؤسسون</a>
+                    <a href="#services" class="nav-link hover:text-brand-pink transition-colors">تخصصاتنا التفاعلية</a>
+                    <a href="#tooth-map" class="nav-link hover:text-brand-pink transition-colors">الفحص التفاعلي</a>
+                    <a href="#faq" class="nav-link hover:text-brand-pink transition-colors">الأسئلة الشائعة</a>
+                    <a href="#contact" class="nav-link hover:text-brand-pink transition-colors">الموقع والتواصل</a>
+                </nav>
+
+                <!-- Actions / Social & Booking -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <button type="button" onclick="openMyBookingsModal()" id="my-bookings-btn" class="relative w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-brand-cyanLight hover:text-brand-cyan flex items-center justify-center transition-colors" title="مواعيدي المحفوظة" aria-label="مواعيدي المحفوظة">
+                        <i class="fas fa-clipboard-list text-base"></i>
+                        <span id="bookings-count-badge" class="hidden absolute -top-1 -left-1 w-5 h-5 rounded-full bg-brand-pink text-white text-[10px] font-bold flex items-center justify-center">0</span>
+                    </button>
+                    <a href="https://www.instagram.com/bella_dental_care?srtk=MThvOHJ0bDZkeG05MA==" target="_blank" rel="noopener noreferrer"
+                       class="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 text-white flex items-center justify-center shadow-md hover:opacity-90 transition-opacity" aria-label="إنستغرام عيادة بيلا">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <button type="button" onclick="openBookingModal()" class="gradient-bg text-white font-bold px-5 py-2.5 rounded-full shadow-glow-pink hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2 text-sm">
+                        <i class="far fa-calendar-check text-base"></i>
+                        <span>احجز موعدك الآن</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-2">
+                    <button type="button" onclick="openMyBookingsModal()" class="sm:hidden relative w-10 h-10 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center" aria-label="مواعيدي المحفوظة">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span id="bookings-count-badge-mobile" class="hidden absolute -top-1 -left-1 w-5 h-5 rounded-full bg-brand-pink text-white text-[10px] font-bold flex items-center justify-center">0</span>
+                    </button>
+                    <button type="button" id="mobile-menu-btn" class="text-slate-700 hover:text-brand-pink text-2xl focus:outline-none p-2" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobile-menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2 font-semibold text-slate-700 shadow-lg">
+            <a href="#about" class="mobile-nav-link block py-2 border-b border-slate-100 hover:text-brand-pink">عن العيادة</a>
+            <a href="#founders" class="mobile-nav-link block py-2 border-b border-slate-100 hover:text-brand-pink">الأطباء المؤسسون</a>
+            <a href="#services" class="mobile-nav-link block py-2 border-b border-slate-100 hover:text-brand-pink">تخصصاتنا التفاعلية</a>
+            <a href="#tooth-map" class="mobile-nav-link block py-2 border-b border-slate-100 hover:text-brand-pink">الفحص التفاعلي للأسنان</a>
+            <a href="#faq" class="mobile-nav-link block py-2 border-b border-slate-100 hover:text-brand-pink">الأسئلة الشائعة</a>
+            <a href="#contact" class="mobile-nav-link block py-2 border-b border-slate-100 hover:text-brand-pink">الموقع والتواصل</a>
+            <div class="pt-3 flex items-center justify-between gap-2">
+                <a href="https://www.instagram.com/bella_dental_care?srtk=MThvOHJ0bDZkeG05MA==" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-pink-600 font-bold text-sm">
+                    <i class="fab fa-instagram text-lg"></i> تابعنا على إنستغرام
+                </a>
+                <button type="button" onclick="openBookingModal()" class="gradient-bg text-white font-bold px-4 py-2 rounded-full text-xs">
+                    احجز الآن
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="top">
+        <!-- Hero Section -->
+        <section class="relative min-h-[88vh] flex items-center overflow-hidden py-12 lg:py-0">
+            <!-- Background Decorative Blobs -->
+            <div class="absolute -top-20 -left-20 w-96 h-96 bg-brand-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-1/2 -right-20 w-96 h-96 bg-brand-pink/15 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                    <!-- Hero Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
+                        <!-- Location Pill -->
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyanLight border border-brand-cyan/30 text-brand-cyan font-bold text-xs sm:text-sm">
+                            <i class="fas fa-map-marker-alt text-brand-pink"></i>
+                            <span>عنكاوا - أربيل | Ankawa, Erbil</span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-slate-900">
+                            ابتسامة مميزة تتألق بكل ثقة في <br class="hidden sm:inline"/>
+                            <span class="gradient-text">عيادة بيلا لطب الأسنان</span>
+                        </h1>
+
+                        <p class="text-slate-600 text-lg sm:text-xl font-normal max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                            تجربة علاج وتجميل متكاملة بأحدث التقنيات العالمية وبإشراف مباشر من نخبة الأطباء وخبراء تجميل وزراعة الأسنان في أربيل.
+                        </p>
+
+                        <!-- Feature Badges -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-3 py-2">
+                            <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-100">
+                                <i class="fas fa-check-circle text-brand-pink text-lg"></i>
+                                <span class="text-slate-800 text-sm font-semibold">أحدث تقنيات الليزر</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-100">
+                                <i class="fas fa-check-circle text-brand-cyan text-lg"></i>
+                                <span class="text-slate-800 text-sm font-semibold">زراعة وتجميل بدون ألم</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-100">
+                                <i class="fas fa-check-circle text-brand-pink text-lg"></i>
+                                <span class="text-slate-800 text-sm font-semibold">استشارات تخصصية</span>
+                            </div>
+                        </div>
+
+                        <!-- Call to action buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <button type="button" onclick="openBookingModal()" class="w-full sm:w-auto gradient-bg text-white font-bold px-8 py-4 rounded-2xl shadow-glow-pink hover:shadow-xl hover:scale-[1.02] transition-all duration-300 text-lg flex items-center justify-center gap-3">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>احجز استشارتك الآن</span>
+                            </button>
+                            <a href="#tooth-map" class="w-full sm:w-auto bg-white text-slate-800 font-bold px-8 py-4 rounded-2xl border-2 border-slate-200 hover:border-brand-cyan hover:text-brand-cyan transition-all duration-300 text-lg flex items-center justify-center gap-2 shadow-sm">
+                                <i class="fas fa-tooth text-brand-cyan"></i>
+                                <span>استكشف صحة أسنانك</span>
+                            </a>
+                        </div>
+
+                        <!-- Instagram Link Footer Banner -->
+                        <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-sm text-slate-500">
+                            <i class="fab fa-instagram text-brand-pink text-xl"></i>
+                            <span>تابع أعمالنا اليومية وقبل/بعد العلاج عبر الإنستغرام:</span>
+                            <a href="https://www.instagram.com/bella_dental_care?srtk=MThvOHJ0bDZkeG05MA==" target="_blank" rel="noopener noreferrer" class="font-bold text-brand-cyan underline hover:text-brand-pink">
+                                @bella_dental_care
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Graphic / Dynamic Visual -->
+                    <div class="lg:col-span-5 relative flex justify-center items-center">
+                        <div class="relative w-full max-w-md aspect-square rounded-3xl p-8 bg-gradient-to-b from-white/95 to-white/50 backdrop-blur-xl border border-white shadow-2xl flex flex-col items-center justify-center text-center group">
+
+                            <!-- Floating Decorative Badges -->
+                            <div class="absolute -top-4 -right-2 sm:-right-4 bg-white p-3.5 sm:p-4 rounded-2xl shadow-lg border border-slate-100 flex items-center gap-3 animate-subtle">
+                                <div class="w-10 h-10 rounded-full bg-brand-pinkLight flex items-center justify-center text-brand-pink">
+                                    <i class="fas fa-crown text-xl"></i>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xs text-slate-500 font-semibold">جودة استثنائية</p>
+                                    <p class="text-sm font-bold text-slate-800">ابتسامة هوليود Bella</p>
+                                </div>
+                            </div>
+
+                            <div class="absolute -bottom-4 -left-2 sm:-left-4 bg-white p-3.5 sm:p-4 rounded-2xl shadow-lg border border-slate-100 flex items-center gap-3 animate-subtle" style="animation-delay: 2s;">
+                                <div class="w-10 h-10 rounded-full bg-brand-cyanLight flex items-center justify-center text-brand-cyan">
+                                    <i class="fas fa-shield-halved text-xl"></i>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xs text-slate-500 font-semibold">ضمان عالي</p>
+                                    <p class="text-sm font-bold text-slate-800">زراعة أسنان دائمة</p>
+                                </div>
+                            </div>
+
+                            <!-- Central Official Clinic Logo -->
+                            <div class="w-full max-w-[300px] px-4 py-6 relative flex items-center justify-center">
+                                <img src="assets/bella-logo.png" alt="Bella Dental Care Official Logo" class="w-full h-auto object-contain drop-shadow-xl animate-subtle">
+                            </div>
+
+                            <div class="mt-4">
+                                <h2 class="text-xl font-bold text-slate-800">عيادة بيلا لطب الأسنان</h2>
+                                <p class="text-xs font-semibold text-brand-cyan tracking-wider mt-1">ANKAWA - ERBIL</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (عن العيادة) -->
+        <section id="about" class="py-20 bg-gradient-to-b from-slate-50 to-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-brand-cyan font-bold text-sm tracking-widest uppercase bg-brand-cyanLight px-4 py-1.5 rounded-full inline-block mb-3">لماذا عيادة بيلا؟</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">معايير عالمية للرعاية والجمال في قلب عنكاوا</h2>
+                    <p class="text-slate-600 mt-3 text-base sm:text-lg leading-relaxed">
+                        في عيادة بيلا لطب وتجميل الأسنان، نجمع بين الدقة الرقمية الحديثة والدفء الإنساني لنمنحك تجربة علاجية خالية من التوتر وبنتائج طبيعية تدوم لسنوات.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-cyanLight text-brand-cyan flex items-center justify-center text-2xl mb-4">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">تشخيص رقمي ثلاثي الأبعاد</h3>
+                        <p class="text-slate-600 text-sm mt-2 leading-relaxed">أشعة رقمية وتصميم ابتسامة إلكتروني يتيح لك معاينة النتيجة المتوقعة بدقة عالية قبل بدء العلاج.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-pinkLight text-brand-pink flex items-center justify-center text-2xl mb-4">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">تعقيم أوروبي صارم (Class B)</h3>
+                        <p class="text-slate-600 text-sm mt-2 leading-relaxed">نطبق أعلى بروتوكولات التعقيم العالمية للأدوات والغرف لضمان سلامة كاملة لكل مراجع وعائلته.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-4">
+                            <i class="fas fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">علاج هادئ وبدون ألم</h3>
+                        <p class="text-slate-600 text-sm mt-2 leading-relaxed">تقنيات تخدير لطيفة وأجهزة ليزر حديثة تقلل من الانزعاج وتسرّع الشفاء بشكل ملحوظ.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl mb-4">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">مواد سويسرية وألمانية أصلية</h3>
+                        <p class="text-slate-600 text-sm mt-2 leading-relaxed">نستخدم حصرياً غرسات وقشور وحشوات تجميلية معتمدة دولياً مع ضمان ومتابعة دورية.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founders & Core Executive Doctors Showcase (أطباء العيادة والخبراء) -->
+        <section id="founders" class="py-20 bg-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-pink font-bold text-sm tracking-widest uppercase bg-brand-pinkLight px-4 py-1.5 rounded-full inline-block mb-3">القيادة الطبية والدقة العالية</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">الأطباء المؤسسون والخبراء</h2>
+                    <p class="text-slate-600 mt-3 text-lg">
+                        تُدار العيادة بإشراف مباشر من الطبيب المؤسس وزوجته دكتورة الأسنان الرئيسية، لتقديم أرقى مستويات الرعاية والأمان العائلي والطبي لمرضانا.
+                    </p>
+                </div>
+
+                <!-- Main Executive Spotlight Card -->
+                <div class="mb-16 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl text-white overflow-hidden shadow-2xl border border-slate-700">
+                    <div class="grid grid-cols-1 lg:grid-cols-12">
+
+                        <!-- Text Info Column -->
+                        <div class="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between space-y-6">
+                            <div>
+                                <div class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-pink to-brand-cyan text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
+                                    <i class="fas fa-star"></i> النواة الطبية والمؤسسون للعيادة
+                                </div>
+                                <h3 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                                    د. المؤسس الرئيسي &amp; دكتورة الأسنان المختصة
+                                </h3>
+                                <p class="text-brand-cyan font-semibold text-sm sm:text-base mt-1">
+                                    استشاريو زراعة، تقويم وتجميل الأسنان الشامل
+                                </p>
+                                <p class="text-slate-300 mt-4 leading-relaxed text-sm sm:text-base">
+                                    بفكر طبي متطور وشغف بابتسامات صحية، تأسست «عيادة بيلا» لتكون المقصد الأول للعائلات والأفراد في أربيل وعنكاوا. يجمع الفريق المؤسس بين الخبرة الأكاديمية العالية والتطبيق العملي الأحدث عالمياً مع اهتمام فائق بأدق التفاصيل والراحة النفسية للمراجع.
+                                </p>
+                            </div>
+
+                            <!-- Special Achievements Grid -->
+                            <div class="grid grid-cols-3 gap-4 border-t border-slate-700/80 pt-6">
+                                <div>
+                                    <h4 class="text-2xl sm:text-3xl font-black text-brand-pink">+12</h4>
+                                    <p class="text-xs text-slate-400">سنوات من الخبرة</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl sm:text-3xl font-black text-brand-cyan">+5,000</h4>
+                                    <p class="text-xs text-slate-400">حالة زراعة وتجميل ناجحة</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl sm:text-3xl font-black text-white">100%</h4>
+                                    <p class="text-xs text-slate-400">التزام بأعلى معايير التعقيم</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap items-center gap-4 pt-2">
+                                <button type="button" onclick="openBookingModal({ doctor: 'الدكتور المؤسس وزوجته دكتورة الأسنان الرئيسية' })" class="gradient-bg text-white font-bold px-6 py-3 rounded-xl hover:shadow-glow-pink transition-all text-sm">
+                                    حجز موعد مع الأطباء المؤسسين
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Graphic/Visual Representation Column -->
+                        <div class="lg:col-span-5 bg-slate-800/50 p-8 flex items-center justify-center relative border-t lg:border-t-0 lg:border-r border-slate-700">
+                            <div class="relative w-full max-w-sm text-center">
+                                <div class="w-40 h-40 mx-auto rounded-full gradient-bg p-1 shadow-glow-cyan mb-4">
+                                    <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user-md text-6xl text-brand-cyan"></i>
+                                    </div>
+                                </div>
+                                <h4 class="text-xl font-bold text-white">إشراف عائلي طبي متخصص</h4>
+                                <p class="text-xs text-slate-400 mt-2">نضمن لك تجربة علاجية مريحة، آمنة ومصممة خصيصاً لتناسب احتياجات ابتسامتك.</p>
+
+                                <div class="mt-6 flex flex-wrap justify-center gap-2">
+                                    <span class="text-xs bg-slate-700 text-slate-200 px-3 py-1 rounded-full">زراعة أسنان</span>
+                                    <span class="text-xs bg-slate-700 text-slate-200 px-3 py-1 rounded-full">تقويم شفاف</span>
+                                    <span class="text-xs bg-slate-700 text-slate-200 px-3 py-1 rounded-full">تجميل فوري</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Specialist Doctors List -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Doctor Card 1 -->
+                    <div class="bg-brand-accentBg rounded-2xl p-6 border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-20 h-20 rounded-2xl bg-brand-pinkLight text-brand-pink flex items-center justify-center text-3xl mb-4 font-bold">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <span class="text-xs font-bold text-brand-pink bg-pink-100 px-3 py-1 rounded-full">تجميل وابتسامة هوليود</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-3">فريق التجميل والتركيبات</h3>
+                            <p class="text-slate-600 text-sm mt-2 leading-relaxed">متخصصون في القشور الخزفية (الفينير واللومينير) وتصميم الابتسامة الرقمي الدقيق.</p>
+                        </div>
+                        <button type="button" onclick="openBookingModal({ doctor: 'فريق التجميل والتركيبات', service: 'الحشوات والتجميل' })" class="mt-5 text-brand-pink font-bold text-sm flex items-center gap-1.5 hover:gap-2.5 transition-all">
+                            <span>حجز موعد</span> <i class="fas fa-arrow-left text-xs"></i>
+                        </button>
+                    </div>
+
+                    <!-- Doctor Card 2 -->
+                    <div class="bg-brand-accentBg rounded-2xl p-6 border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-20 h-20 rounded-2xl bg-brand-cyanLight text-brand-cyan flex items-center justify-center text-3xl mb-4 font-bold">
+                                <i class="fas fa-tooth"></i>
+                            </div>
+                            <span class="text-xs font-bold text-brand-cyan bg-cyan-100 px-3 py-1 rounded-full">التقويم وتعديل الفكين</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-3">فريق تقويم الأسنان</h3>
+                            <p class="text-slate-600 text-sm mt-2 leading-relaxed">خبراء التقويم المعدني والشفاف للأطفال والبالغين لتناسق مثالي وإطباق صحي للفكين.</p>
+                        </div>
+                        <button type="button" onclick="openBookingModal({ doctor: 'فريق تقويم الأسنان', service: 'تقويم الأسنان' })" class="mt-5 text-brand-cyan font-bold text-sm flex items-center gap-1.5 hover:gap-2.5 transition-all">
+                            <span>حجز موعد</span> <i class="fas fa-arrow-left text-xs"></i>
+                        </button>
+                    </div>
+
+                    <!-- Doctor Card 3 -->
+                    <div class="bg-brand-accentBg rounded-2xl p-6 border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-20 h-20 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-3xl mb-4 font-bold">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <span class="text-xs font-bold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">علاج الجذور واللثة</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-3">أخصائيو عصب الأسنان</h3>
+                            <p class="text-slate-600 text-sm mt-2 leading-relaxed">علاج جذور الأسنان وحشوات العصب الدقيقة بالمجهر بجلسة واحدة وبدون ألم.</p>
+                        </div>
+                        <button type="button" onclick="openBookingModal({ doctor: 'أخصائيو عصب الأسنان', service: 'علاج الجذور والعصب' })" class="mt-5 text-purple-600 font-bold text-sm flex items-center gap-1.5 hover:gap-2.5 transition-all">
+                            <span>حجز موعد</span> <i class="fas fa-arrow-left text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Dynamic & Interactive Medical Departments Section (أقسام العلاج والتخصصات التفاعلية) -->
+        <section id="services" class="py-20 bg-slate-50 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-cyan font-bold text-sm tracking-widest uppercase bg-brand-cyanLight px-4 py-1.5 rounded-full inline-block mb-3">تفاعل واكتشف تفاصيل علاجك</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">الأقسام الطبية والمحاكاة التفاعلية</h2>
+                    <p class="text-slate-600 mt-3">اضغط على أي قسم لمعاينة كيفية إجراء العلاج خطوة بخطوة عبر محاكي عيادة بيلا التفاعلي.</p>
+                </div>
+
+                <!-- Service Tabs Nav -->
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10" role="tablist" aria-label="الأقسام الطبية">
+                    <button type="button" role="tab" aria-selected="true" aria-controls="content-implant" onclick="switchTab('implant')" id="tab-implant" class="dept-tab active border-2 border-brand-cyan bg-brand-cyan text-white px-5 sm:px-6 py-3 rounded-2xl font-bold transition-all shadow-md text-sm sm:text-base flex items-center gap-2">
+                        <i class="fas fa-screwdriver-wrench"></i>
+                        <span>زراعة الأسنان</span>
+                    </button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="content-ortho" onclick="switchTab('ortho')" id="tab-ortho" class="dept-tab border-2 border-slate-200 bg-white text-slate-700 px-5 sm:px-6 py-3 rounded-2xl font-bold transition-all shadow-sm hover:border-brand-pink text-sm sm:text-base flex items-center gap-2">
+                        <i class="fas fa-teeth text-brand-pink tab-icon"></i>
+                        <span>تقويم الأسنان</span>
+                    </button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="content-whitening" onclick="switchTab('whitening')" id="tab-whitening" class="dept-tab border-2 border-slate-200 bg-white text-slate-700 px-5 sm:px-6 py-3 rounded-2xl font-bold transition-all shadow-sm hover:border-brand-cyan text-sm sm:text-base flex items-center gap-2">
+                        <i class="fas fa-wand-magic-sparkles text-amber-500 tab-icon"></i>
+                        <span>التبييض والتنظيف</span>
+                    </button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="content-filling" onclick="switchTab('filling')" id="tab-filling" class="dept-tab border-2 border-slate-200 bg-white text-slate-700 px-5 sm:px-6 py-3 rounded-2xl font-bold transition-all shadow-sm hover:border-brand-pink text-sm sm:text-base flex items-center gap-2">
+                        <i class="fas fa-tooth text-purple-500 tab-icon"></i>
+                        <span>الحشوات والتجميل</span>
+                    </button>
+                </div>
+
+                <!-- Tab Content Containers -->
+                <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-100">
+
+                    <!-- TAB 1: DENTAL IMPLANTS (زراعة الأسنان) -->
+                    <div id="content-implant" role="tabpanel" class="tab-content grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-4">
+                            <div class="inline-flex items-center gap-2 text-brand-cyan font-bold text-sm bg-brand-cyanLight px-3 py-1 rounded-full">
+                                <i class="fas fa-microscope"></i> تقنية الزراعة الفورية
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">زراعة الأسنان المتطورة بدقة متناهية</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                                نعيد لك أسنانك المفقودة باستخدام غرسات الزيركون والتيتانيوم السويسرية والألمانية ذات التوافق الحيوي العالي. يتم التثبيت بدون ألم وبسرعة فائقة.
+                            </p>
+
+                            <div class="space-y-3 pt-2">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs mt-0.5 shrink-0">1</div>
+                                    <p class="text-slate-700 text-sm font-semibold">تجهيز مكان الغرسة وتثبيت الزرعة بعظم الفك بدقة رقمية.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs mt-0.5 shrink-0">2</div>
+                                    <p class="text-slate-700 text-sm font-semibold">تركيب المربط الدعامي (Abutment) لضمان ثبات مثالي.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs mt-0.5 shrink-0">3</div>
+                                    <p class="text-slate-700 text-sm font-semibold">تثبيت التاج الخزفي الناصع والمطابق للون باقي الأسنان.</p>
+                                </div>
+                            </div>
+
+                            <button type="button" onclick="openBookingModal({ service: 'زراعة الأسنان', doctor: 'الدكتور المؤسس وزوجته دكتورة الأسنان الرئيسية' })" class="mt-6 gradient-bg text-white font-bold px-6 py-3 rounded-xl shadow-glow-cyan hover:opacity-90 transition-all text-sm">
+                                حجز موعد استشارة زراعة
+                            </button>
+                        </div>
+
+                        <!-- Interactive Canvas Simulation for Implant -->
+                        <div class="lg:col-span-6 bg-slate-900 rounded-2xl p-6 text-white text-center flex flex-col items-center justify-between min-h-[370px] relative overflow-hidden">
+                            <div class="w-full flex justify-between items-center mb-2 border-b border-slate-800 pb-2">
+                                <span class="text-xs font-bold text-brand-cyan">محاكي عملية الزراعة التفاعلي</span>
+                                <span id="implant-step-label" class="text-xs text-slate-300 font-semibold">الخطوة 1: الغرسة السويسرية</span>
+                            </div>
+
+                            <div class="relative w-full h-56 flex items-center justify-center">
+                                <canvas id="implantCanvas" class="w-full h-full rounded-lg"></canvas>
+                            </div>
+
+                            <div class="flex flex-wrap items-center gap-2 mt-4 w-full justify-center">
+                                <button type="button" id="implant-btn-1" onclick="setImplantStep(1)" class="implant-step-btn active px-4 py-2 bg-slate-800 hover:bg-brand-cyan hover:text-slate-950 text-xs rounded-xl font-bold transition-all">1. الغرسة</button>
+                                <button type="button" id="implant-btn-2" onclick="setImplantStep(2)" class="implant-step-btn px-4 py-2 bg-slate-800 hover:bg-brand-cyan hover:text-slate-950 text-xs rounded-xl font-bold transition-all">2. الدعامة</button>
+                                <button type="button" id="implant-btn-3" onclick="setImplantStep(3)" class="implant-step-btn px-4 py-2 bg-slate-800 hover:bg-brand-cyan hover:text-slate-950 text-xs rounded-xl font-bold transition-all">3. التاج النهائي</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: ORTHODONTICS (تقويم الأسنان) -->
+                    <div id="content-ortho" role="tabpanel" class="tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-4">
+                            <div class="inline-flex items-center gap-2 text-brand-pink font-bold text-sm bg-brand-pinkLight px-3 py-1 rounded-full">
+                                <i class="fas fa-smile"></i> التقويم الشفاف والمعدني
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">تقويم الأسنان وتعديل محاذاة الفك</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                                سواء كنت تفضل التقويم الشفاف غير المرئي أو أقواس التقويم المعدني الدقيقة، نقوم برسم خطة علاجية مخصصة تناسب الفك لضمان إطباق واصطفاف مثالي.
+                            </p>
+
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 text-xs sm:text-sm">
+                                <div class="flex justify-between font-bold text-slate-800">
+                                    <span>حالة محاذاة الأسنان:</span>
+                                    <span id="ortho-status-text" class="text-brand-pink">أسنان متباعدة وغير منتظمة</span>
+                                </div>
+                                <p class="text-slate-500">جرّب التبديل بين التقويم المعدني والشفاف ثم حرك الشريط لمعاينة التحوّل التدريجي.</p>
+                            </div>
+
+                            <button type="button" onclick="openBookingModal({ service: 'تقويم الأسنان', doctor: 'فريق تقويم الأسنان' })" class="mt-4 gradient-bg text-white font-bold px-6 py-3 rounded-xl shadow-glow-pink hover:opacity-90 transition-all text-sm">
+                                حجز موعد استشارة تقويم
+                            </button>
+                        </div>
+
+                        <!-- Interactive Ortho Slider Canvas -->
+                        <div class="lg:col-span-6 bg-slate-900 rounded-2xl p-6 text-white text-center flex flex-col items-center justify-between min-h-[370px]">
+                            <div class="w-full flex flex-wrap justify-between items-center gap-2 border-b border-slate-800 pb-2">
+                                <span class="text-xs font-bold text-brand-pink">محاكي استقامة الأسنان</span>
+                                <div class="flex items-center gap-1 bg-slate-800 p-1 rounded-lg text-[11px]">
+                                    <button type="button" id="ortho-mode-metal" onclick="setOrthoMode('metal')" class="px-2.5 py-1 rounded-md bg-brand-pink text-white font-bold transition-all">معدني</button>
+                                    <button type="button" id="ortho-mode-clear" onclick="setOrthoMode('clear')" class="px-2.5 py-1 rounded-md text-slate-300 hover:text-white font-bold transition-all">شفاف</button>
+                                </div>
+                            </div>
+
+                            <div class="relative w-full h-52 flex items-center justify-center my-2">
+                                <canvas id="orthoCanvas" class="w-full h-full rounded-lg"></canvas>
+                            </div>
+
+                            <div class="w-full space-y-2">
+                                <input type="range" id="orthoRange" min="0" max="100" value="0" oninput="updateOrthoSim(this.value)" class="w-full accent-brand-pink cursor-pointer" aria-label="تقدم علاج التقويم">
+                                <div class="flex justify-between text-xs text-slate-400 font-bold">
+                                    <span>قبل العلاج (ازدحام)</span>
+                                    <span id="ortho-percent-label" class="text-brand-cyan">0%</span>
+                                    <span>بعد التقويم (انتظام كامل)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 3: WHITENING & CLEANING (التبييض والتنظيف) -->
+                    <div id="content-whitening" role="tabpanel" class="tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-4">
+                            <div class="inline-flex items-center gap-2 text-amber-600 font-bold text-sm bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+                                <i class="fas fa-sparkles"></i> تبييض الفلاش والتنظيف الهوائي
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">تنظيف وتبييض الأسنان بالليزر</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                                إزالة الترسبات الكلسية والتصبغات، وتبييض الأسنان حتى 8 درجات أفتح خلال جلسة واحدة فقط لمدة 45 دقيقة وبأمان تام على مينا الأسنان.
+                            </p>
+
+                            <div class="flex items-center gap-4 bg-amber-50/60 p-4 rounded-xl border border-amber-100">
+                                <i class="fas fa-sun text-amber-500 text-3xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">تبييض بيلا السريع (Bella Flash)</h4>
+                                    <p class="text-xs text-slate-600">بدون تحسس وبنتائج فورية تدوم طويلاً مع جل حماية للمينا.</p>
+                                </div>
+                            </div>
+
+                            <button type="button" onclick="openBookingModal({ service: 'تبييض وتنظيف الأسنان', doctor: 'فريق التجميل والتركيبات' })" class="mt-4 gradient-bg text-white font-bold px-6 py-3 rounded-xl shadow-glow-cyan hover:opacity-90 transition-all text-sm">
+                                حجز جلسة تبييض وتنظيف
+                            </button>
+                        </div>
+
+                        <!-- Whitening Interactive Canvas Simulation -->
+                        <div class="lg:col-span-6 bg-slate-900 rounded-2xl p-6 text-white text-center flex flex-col items-center justify-between min-h-[370px]">
+                            <div class="w-full flex justify-between items-center border-b border-slate-800 pb-2">
+                                <span class="text-xs font-bold text-amber-400">مقياس درجات التبييض (VITA Shade)</span>
+                                <span id="shade-level-text" class="text-xs text-amber-300 font-bold">درجة A3 — طبيعية مائلة للاصفرار</span>
+                            </div>
+
+                            <div class="relative w-full h-52 flex items-center justify-center my-2">
+                                <canvas id="whiteningCanvas" class="w-full h-full rounded-lg"></canvas>
+                            </div>
+
+                            <div class="w-full space-y-2">
+                                <input type="range" id="whiteningRange" min="0" max="100" value="20" oninput="updateWhiteningSim(this.value)" class="w-full accent-amber-400 cursor-pointer" aria-label="درجة التبييض">
+                                <div class="flex justify-between text-xs text-slate-400 font-bold">
+                                    <span>A3.5 اصفرار</span>
+                                    <span id="shade-code-badge" class="text-amber-300">Shade A3</span>
+                                    <span>BL1 بياض هوليودي</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 4: FILLINGS & RESTORATION (الحشوات والتجميل) -->
+                    <div id="content-filling" role="tabpanel" class="tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-4">
+                            <div class="inline-flex items-center gap-2 text-purple-600 font-bold text-sm bg-purple-50 px-3 py-1 rounded-full border border-purple-200">
+                                <i class="fas fa-gem"></i> حشوات تجميلية ضوئية
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">ترميم وحشوات الأسنان التجميلية</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                                نعالج التسوس ونستبدل الحشوات المعدنية القديمة بحشوات ضوئية تجميلية (Composite) تطابق لون السن تماماً، مع الحفاظ على الأنسجة السليمة ومظهر طبيعي جذّاب.
+                            </p>
+
+                            <button type="button" onclick="openBookingModal({ service: 'الحشوات والتجميل', doctor: 'أخصائيو عصب الأسنان' })" class="mt-4 gradient-bg text-white font-bold px-6 py-3 rounded-xl shadow-glow-pink hover:opacity-90 transition-all text-sm">
+                                حجز موعد حشوات وتجميل
+                            </button>
+                        </div>
+
+                        <!-- Interactive Cavity Cleaner Simulator -->
+                        <div class="lg:col-span-6 bg-slate-900 rounded-2xl p-6 text-white text-center flex flex-col items-center justify-between min-h-[370px]">
+                            <div class="w-full flex justify-between items-center border-b border-slate-800 pb-2">
+                                <span class="text-xs font-bold text-purple-400">محاكي إزالة التسوس وتطبيق الحشوة</span>
+                                <span id="filling-status" class="text-xs text-rose-300 font-semibold">يوجد تسوس سطحي</span>
+                            </div>
+
+                            <div class="relative w-full h-52 flex items-center justify-center my-2">
+                                <canvas id="fillingCanvas" class="w-full h-full rounded-lg"></canvas>
+                            </div>
+
+                            <div class="flex flex-wrap items-center gap-2 w-full justify-center">
+                                <button type="button" onclick="cleanCavity()" class="px-4 py-2.5 bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs rounded-xl shadow-md transition-all">
+                                    1. تنظيف التسوس بالليزر
+                                </button>
+                                <button type="button" onclick="applyFilling()" class="px-4 py-2.5 bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs rounded-xl shadow-md transition-all">
+                                    2. وضع الحشوة الضوئية
+                                </button>
+                                <button type="button" onclick="resetFillingSim()" class="px-3.5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs rounded-xl transition-all" title="إعادة المحاكاة">
+                                    <i class="fas fa-rotate-right"></i> إعادة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Tooth Map Section (خريطة الأسنان التفاعلية وحاسبة الفحص) -->
+        <section id="tooth-map" class="py-20 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-pink font-bold text-sm tracking-widest uppercase bg-brand-pinkLight px-4 py-1.5 rounded-full inline-block mb-3">فحص فوري ذاتي</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">خريطة الأسنان التفاعلية</h2>
+                    <p class="text-slate-600 mt-3">انقر على سن أو أكثر في الفك أدناه وحدد الإجراء المطلوب لبناء خطة علاجك الأولية وإرسالها مباشرة للطبيب عند الحجز.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                    <!-- Interactive Teeth Visualizer -->
+                    <div class="lg:col-span-7 bg-brand-accentBg p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-6">
+                            <h3 class="font-bold text-slate-700 flex items-center gap-2 text-sm sm:text-base">
+                                <i class="fas fa-hand-pointer text-brand-pink"></i>
+                                <span>اختر السن أو الضرس من مخطط الفك:</span>
+                            </h3>
+                            <div class="flex items-center gap-3 text-[11px] font-semibold text-slate-500">
+                                <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-brand-pink inline-block"></span> محدد حالياً</span>
+                                <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-brand-cyan inline-block"></span> ضمن الخطة</span>
+                            </div>
+                        </div>
+
+                        <!-- Upper Jaw Teeth Grid -->
+                        <div class="mb-8">
+                            <p class="text-xs font-bold text-slate-400 text-center mb-3 tracking-widest uppercase">الفك العلوي (Upper Arch: 1 - 16)</p>
+                            <div class="grid grid-cols-8 sm:flex sm:justify-center gap-1.5 sm:gap-2 flex-wrap" id="upper-jaw">
+                                <!-- Generated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="w-full border-t border-dashed border-slate-300 my-4 relative flex items-center justify-center">
+                            <span class="bg-brand-accentBg px-3 text-xs text-slate-400 font-bold">خط الإطباق</span>
+                        </div>
+
+                        <!-- Lower Jaw Teeth Grid -->
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 text-center mb-3 tracking-widest uppercase">الفك السفلي (Lower Arch: 17 - 32)</p>
+                            <div class="grid grid-cols-8 sm:flex sm:justify-center gap-1.5 sm:gap-2 flex-wrap" id="lower-jaw">
+                                <!-- Generated by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Selected Tooth Assessment Card -->
+                    <div class="lg:col-span-5 bg-slate-900 text-white p-6 sm:p-8 rounded-3xl shadow-xl flex flex-col justify-between min-h-[460px]">
+                        <div>
+                            <div class="flex justify-between items-center border-b border-slate-800 pb-4 mb-4">
+                                <div>
+                                    <span class="text-xs text-brand-cyan font-bold block">ملخص الفحص الأولي</span>
+                                    <h4 id="selected-tooth-title" class="text-lg sm:text-xl font-bold text-white mt-1">لم يتم اختيار سن بعد</h4>
+                                    <p id="selected-tooth-subtitle" class="text-xs text-slate-400 mt-0.5"></p>
+                                </div>
+                                <div class="w-12 h-12 rounded-2xl gradient-bg flex items-center justify-center text-white text-2xl font-black shrink-0">
+                                    <i class="fas fa-tooth"></i>
+                                </div>
+                            </div>
+
+                            <!-- Treatment Selection Buttons for Tooth -->
+                            <div id="tooth-actions" class="space-y-4 hidden">
+                                <p class="text-xs text-slate-300">حدد الإجراء المتوقع لهذا السن (يمكنك اختيار أكثر من سن):</p>
+
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button type="button" data-treatment="حشوة تجميلية / سوس" onclick="selectTreatment('حشوة تجميلية / سوس')" class="treatment-btn p-3 rounded-xl bg-slate-800 hover:bg-brand-pink/30 text-right text-xs font-bold transition-all border border-slate-700">
+                                        <i class="fas fa-fill-drip text-brand-pink mb-1 block text-sm"></i>
+                                        <span>حشوة تجميلية</span>
+                                    </button>
+                                    <button type="button" data-treatment="زراعة سن مفقود" onclick="selectTreatment('زراعة سن مفقود')" class="treatment-btn p-3 rounded-xl bg-slate-800 hover:bg-brand-cyan/30 text-right text-xs font-bold transition-all border border-slate-700">
+                                        <i class="fas fa-screwdriver text-brand-cyan mb-1 block text-sm"></i>
+                                        <span>زراعة غرسة</span>
+                                    </button>
+                                    <button type="button" data-treatment="تقويم وتعديل" onclick="selectTreatment('تقويم وتعديل')" class="treatment-btn p-3 rounded-xl bg-slate-800 hover:bg-purple-600/30 text-right text-xs font-bold transition-all border border-slate-700">
+                                        <i class="fas fa-grip-lines text-purple-400 mb-1 block text-sm"></i>
+                                        <span>تعديل وتقويم</span>
+                                    </button>
+                                    <button type="button" data-treatment="تبييض / تنظيف" onclick="selectTreatment('تبييض / تنظيف')" class="treatment-btn p-3 rounded-xl bg-slate-800 hover:bg-amber-500/30 text-right text-xs font-bold transition-all border border-slate-700">
+                                        <i class="fas fa-sparkles text-amber-400 mb-1 block text-sm"></i>
+                                        <span>تنظيف وتبييض</span>
+                                    </button>
+                                    <button type="button" data-treatment="علاج عصب / جذور" onclick="selectTreatment('علاج عصب / جذور')" class="treatment-btn p-3 rounded-xl bg-slate-800 hover:bg-rose-500/30 text-right text-xs font-bold transition-all border border-slate-700">
+                                        <i class="fas fa-bolt text-rose-400 mb-1 block text-sm"></i>
+                                        <span>علاج عصب</span>
+                                    </button>
+                                    <button type="button" data-treatment="فينير / تيجان زيركون" onclick="selectTreatment('فينير / تيجان زيركون')" class="treatment-btn p-3 rounded-xl bg-slate-800 hover:bg-emerald-500/30 text-right text-xs font-bold transition-all border border-slate-700">
+                                        <i class="fas fa-crown text-emerald-400 mb-1 block text-sm"></i>
+                                        <span>فينير / زيركون</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Initial placeholder state -->
+                            <div id="tooth-placeholder" class="py-10 text-center text-slate-400 space-y-2">
+                                <i class="fas fa-hand-pointer text-4xl text-slate-600 mb-2"></i>
+                                <p class="text-sm">انقر على أي سن في المخطط الجانبي لبدء التقييم وبناء خطتك الأولية.</p>
+                            </div>
+
+                            <!-- Multi-tooth Treatment Plan List -->
+                            <div id="plan-summary-box" class="bg-slate-800/80 p-4 rounded-xl border border-slate-700 mt-4 hidden">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-bold text-brand-cyan">الأسنان المضافة للخطة (<span id="plan-count">0</span>)</span>
+                                    <button type="button" onclick="clearToothPlan()" class="text-[11px] text-rose-400 hover:text-rose-300 font-semibold">مسح الكل</button>
+                                </div>
+                                <ul id="plan-items-list" class="space-y-1.5 max-h-36 overflow-y-auto text-xs"></ul>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="bookWithToothInfo()" id="confirm-tooth-btn" disabled class="w-full mt-6 py-4 rounded-xl font-bold bg-slate-800 text-slate-500 cursor-not-allowed transition-all text-sm flex items-center justify-center gap-2">
+                            <span>متابعة حجز الموعد بهذه الخطة</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ Section (الأسئلة الشائعة) -->
+        <section id="faq" class="py-20 bg-slate-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-brand-cyan font-bold text-sm tracking-widest uppercase bg-brand-cyanLight px-4 py-1.5 rounded-full inline-block mb-3">إجابات سريعة</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">الأسئلة الشائعة</h2>
+                </div>
+
+                <div class="space-y-3" id="faq-list">
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                        <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-4 text-right font-bold text-slate-800 flex items-center justify-between gap-4 hover:text-brand-pink transition-colors">
+                            <span>هل عملية زراعة الأسنان مؤلمة وكم تستغرق من الوقت؟</span>
+                            <i class="fas fa-chevron-down faq-chevron text-slate-400 transition-transform duration-300 text-sm"></i>
+                        </button>
+                        <div class="faq-content px-6 text-slate-600 text-sm leading-relaxed">
+                            <p class="pb-5">تُجرى الزراعة تحت تخدير موضعي مريح تماماً بدون ألم، وتستغرق جلسة وضع الغرسة الواحدة نحو 20 إلى 30 دقيقة فقط باستخدام التوجيه الرقمي الدقيق.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                        <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-4 text-right font-bold text-slate-800 flex items-center justify-between gap-4 hover:text-brand-pink transition-colors">
+                            <span>ما الفرق بين التقويم الشفاف والتقويم المعدني؟</span>
+                            <i class="fas fa-chevron-down faq-chevron text-slate-400 transition-transform duration-300 text-sm"></i>
+                        </button>
+                        <div class="faq-content px-6 text-slate-600 text-sm leading-relaxed">
+                            <p class="pb-5">التقويم الشفاف قوالب متحركة غير مرئية تقريباً ومريحة أثناء الأكل وتنظيف الأسنان، بينما التقويم المعدني مثالي للحالات المعقدة وذو كفاءة عالية. يحدد الطبيب الخيار الأنسب بعد الفحص.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                        <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-4 text-right font-bold text-slate-800 flex items-center justify-between gap-4 hover:text-brand-pink transition-colors">
+                            <span>هل يسبب تبييض الأسنان بالليزر تحسساً للمينا؟</span>
+                            <i class="fas fa-chevron-down faq-chevron text-slate-400 transition-transform duration-300 text-sm"></i>
+                        </button>
+                        <div class="faq-content px-6 text-slate-600 text-sm leading-relaxed">
+                            <p class="pb-5">في عيادة بيلا نستخدم أنظمة تبييض طبية آمنة مدعمة بمواد مهدئة وحامية للمينا، مما يمنحك بياضاً فورياً مع أقل قدر ممكن من التحسس.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                        <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-4 text-right font-bold text-slate-800 flex items-center justify-between gap-4 hover:text-brand-pink transition-colors">
+                            <span>كيف يمكنني حجز موعد أو تعديله في عيادة بيلا بعنكاوا؟</span>
+                            <i class="fas fa-chevron-down faq-chevron text-slate-400 transition-transform duration-300 text-sm"></i>
+                        </button>
+                        <div class="faq-content px-6 text-slate-600 text-sm leading-relaxed">
+                            <p class="pb-5">يمكنك الحجز مباشرة عبر زر «احجز موعدك الآن» في الموقع، وسيتم حفظ تفاصيل موعدك فوراً مع خيار تأكيده بنقرة واحدة عبر الواتساب المباشر للعيادة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clinic Location & Contact Section (الموقع والتواصل - عنكاوا أربيل) -->
+        <section id="contact" class="py-20 bg-slate-900 text-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                    <!-- Contact Details -->
+                    <div class="lg:col-span-6 space-y-8">
+                        <div>
+                            <span class="text-brand-cyan font-bold text-sm tracking-widest uppercase bg-brand-cyan/10 px-4 py-1.5 rounded-full inline-block mb-3">نرحب بكم في عيادتنا</span>
+                            <h2 class="text-3xl sm:text-4xl font-black text-white">زورونا في أربيل - عنكاوا</h2>
+                            <p class="text-slate-400 mt-3 leading-relaxed">
+                                تقع عيادة Bella Dental Care في موقع متميز وسهل الوصول في عنكاوا. يسعدنا استقبالكم لتقديم أرقى خدمات الرعاية والراحة الفائقة.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-800/60 border border-slate-700">
+                                <div class="w-12 h-12 rounded-xl bg-brand-pink/20 text-brand-pink flex items-center justify-center text-xl shrink-0">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-base">عنوان العيادة</h4>
+                                    <p class="text-slate-300 text-sm mt-0.5">أربيل - عنكاوا | Erbil - Ankawa</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-800/60 border border-slate-700">
+                                <div class="w-12 h-12 rounded-xl bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-xl shrink-0">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-base">أوقات العمل</h4>
+                                    <p class="text-slate-300 text-sm mt-0.5">يومياً من الساعة 3:00 مساءً وحتى 9:00 مساءً (ما عدا الجمعة)</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-800/60 border border-slate-700">
+                                <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl shrink-0">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-base">صفحة الإنستغرام الرسمية</h4>
+                                    <a href="https://www.instagram.com/bella_dental_care?srtk=MThvOHJ0bDZkeG05MA==" target="_blank" rel="noopener noreferrer" class="text-brand-pink hover:underline text-sm font-semibold mt-0.5 inline-block">
+                                        @bella_dental_care
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <button type="button" onclick="openBookingModal()" class="gradient-bg text-white font-bold px-8 py-3.5 rounded-xl shadow-glow-pink hover:opacity-90 transition-all text-sm">
+                                <i class="fas fa-calendar-check ml-2"></i> احجز موعدك الآن
+                            </button>
+                            <a href="https://www.instagram.com/bella_dental_care?srtk=MThvOHJ0bDZkeG05MA==" target="_blank" rel="noopener noreferrer" class="bg-slate-800 text-white font-bold px-6 py-3.5 rounded-xl border border-slate-700 hover:border-brand-pink transition-all text-sm flex items-center gap-2">
+                                <i class="fab fa-instagram text-brand-pink text-base"></i>
+                                <span>تصفح أعمالنا على إنستغرام</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Styled Map Card -->
+                    <div class="lg:col-span-6 bg-slate-800 rounded-3xl p-6 border border-slate-700 relative overflow-hidden shadow-2xl">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span id="clinic-status-dot" class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+                                <span id="clinic-status-text" class="text-xs font-bold text-slate-300">عيادة بيلا تستقبل حجوزاتكم</span>
+                            </div>
+                            <span class="text-xs text-brand-cyan font-bold">Ankawa, Erbil</span>
+                        </div>
+
+                        <div class="w-full h-80 rounded-2xl bg-slate-900 relative overflow-hidden border border-slate-700 flex flex-col items-center justify-center p-6 text-center">
+                            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#00AEEF_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+                            <div class="w-24 h-24 rounded-full gradient-bg p-1 shadow-glow-pink mb-4 animate-subtle relative z-10">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center p-2 overflow-hidden">
+                                    <img src="assets/bella-logo.png" alt="Bella Dental Care" class="w-full h-auto object-contain">
+                                </div>
+                            </div>
+
+                            <h4 class="text-lg font-bold text-white relative z-10">Bella Dental Care</h4>
+                            <p class="text-xs text-slate-400 mt-1 max-w-xs relative z-10">عنكاوا - أربيل بالقرب من المراكز الرئيسية</p>
+
+                            <a href="https://www.google.com/maps/search/Bella+Dental+Care+Ankawa+Erbil" target="_blank" rel="noopener noreferrer" class="mt-6 px-6 py-2.5 rounded-xl bg-brand-cyan text-slate-950 font-extrabold text-xs hover:bg-white transition-all shadow-md relative z-10 flex items-center gap-2">
+                                <i class="fas fa-directions text-sm"></i>
+                                <span>فتح الاتجاهات عبر خرائط جوجل</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+
+            <a href="#top" class="flex items-center gap-3">
+                <img src="assets/bella-logo-dark.png" alt="Bella Dental Care - عيادة بيلا" class="h-11 w-auto object-contain">
+            </a>
+
+            <p class="text-center md:text-right text-xs text-slate-500">
+                © <span id="year"></span> جميع الحقوق محفوظة لـ عيادة بيلا لطب وتجميل الأسنان | عنكاوا - أربيل.
+            </p>
+
+            <div class="flex items-center gap-4">
+                <a href="https://www.instagram.com/bella_dental_care?srtk=MThvOHJ0bDZkeG05MA==" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-800 text-brand-pink flex items-center justify-center hover:bg-brand-pink hover:text-white transition-all" aria-label="إنستغرام">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
+                <button type="button" onclick="openBookingModal()" class="w-9 h-9 rounded-full bg-slate-800 text-brand-cyan flex items-center justify-center hover:bg-brand-cyan hover:text-white transition-all" aria-label="حجز موعد">
+                    <i class="fas fa-calendar-alt text-base"></i>
+                </button>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Booking & Appointment Modal (حجز موعد إلكتروني) -->
+    <div id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle" class="modal-backdrop fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="modal-panel bg-white w-full max-w-lg rounded-3xl shadow-2xl border border-slate-100 overflow-hidden max-h-[92vh] overflow-y-auto">
+
+            <!-- Modal Header -->
+            <div class="gradient-bg p-6 text-white flex justify-between items-center">
+                <div>
+                    <h3 id="bookingModalTitle" class="text-xl font-extrabold">حجز موعد عيادة بيلا</h3>
+                    <p class="text-xs text-white/85 mt-1">عنكاوا - أربيل | Bella Dental Care</p>
+                </div>
+                <button type="button" onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-all" aria-label="إغلاق النافذة">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Booking Form -->
+            <form id="appointmentForm" onsubmit="handleFormSubmit(event)" class="p-6 space-y-4">
+
+                <div>
+                    <label for="patientName" class="block text-xs font-bold text-slate-700 mb-1">الاسم الكامل *</label>
+                    <input type="text" id="patientName" required placeholder="أدخل اسمك الكريم" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-cyan text-sm">
+                </div>
+
+                <div>
+                    <label for="patientPhone" class="block text-xs font-bold text-slate-700 mb-1">رقم الهاتف / الواتساب *</label>
+                    <input type="tel" id="patientPhone" required placeholder="0750 XXX XXXX" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-cyan text-sm text-right" dir="ltr">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="serviceSelect" class="block text-xs font-bold text-slate-700 mb-1">قسم العلاج المطلوب</label>
+                        <select id="serviceSelect" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-cyan text-sm bg-white">
+                            <option value="استشارة عامة وفحص">استشارة عامة وفحص</option>
+                            <option value="زراعة الأسنان">زراعة الأسنان</option>
+                            <option value="تقويم الأسنان">تقويم الأسنان</option>
+                            <option value="تبييض وتنظيف الأسنان">تبييض وتنظيف الأسنان</option>
+                            <option value="الحشوات والتجميل">الحشوات والتجميل</option>
+                            <option value="علاج الجذور والعصب">علاج الجذور والعصب</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="doctorSelect" class="block text-xs font-bold text-slate-700 mb-1">الطبيب المفضل</label>
+                        <select id="doctorSelect" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-cyan text-sm bg-white">
+                            <option value="الدكتور المؤسس وزوجته دكتورة الأسنان الرئيسية">الأطباء المؤسسون (المستشارون)</option>
+                            <option value="فريق التجميل والتركيبات">أخصائي التجميل والتركيبات</option>
+                            <option value="فريق تقويم الأسنان">أخصائي تقويم الأسنان</option>
+                            <option value="أخصائيو عصب الأسنان">أخصائي حشوات وعصب</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="bookingDate" class="block text-xs font-bold text-slate-700 mb-1">تاريخ الزيارة المقترح *</label>
+                        <input type="date" id="bookingDate" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-cyan text-sm bg-white">
+                    </div>
+                    <div>
+                        <label for="bookingTime" class="block text-xs font-bold text-slate-700 mb-1">الفترة المفضلة</label>
+                        <select id="bookingTime" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-cyan text-sm bg-white">
+                            <option value="3:00 - 5:00 مساءً">3:00 - 5:00 مساءً</option>
+                            <option value="5:00 - 7:00 مساءً">5:00 - 7:00 مساءً</option>
+                            <option value="7:00 - 9:00 مساءً">7:00 - 9:00 مساءً</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="toothInfoInput" class="block text-xs font-bold text-slate-700 mb-1">تفاصيل إضافية / خطة الأسنان</label>
+                    <textarea id="toothInfoInput" rows="2" placeholder="مثال: الضرس العلوي / حشوة أو ملاحظات للطبيب" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-cyan text-sm resize-none"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full gradient-bg text-white font-bold py-3.5 rounded-xl shadow-glow-pink hover:opacity-95 transition-all text-sm flex items-center justify-center gap-2">
+                        <i class="fas fa-calendar-check text-base"></i>
+                        <span>تأكيد وحفظ الموعد</span>
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- Booking Confirmation View -->
+            <div id="bookingConfirmation" class="hidden p-6 text-center space-y-4">
+                <div class="w-16 h-16 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div>
+                    <h4 class="text-xl font-extrabold text-slate-900">تم تسجيل طلب موعدك بنجاح!</h4>
+                    <p class="text-xs text-slate-500 mt-1">رقم المرجع: <span id="confirmRefCode" class="font-bold text-brand-pink"></span></p>
+                </div>
+                <div id="confirmDetailsBox" class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-right text-xs text-slate-700 space-y-1.5"></div>
+                <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                    <a id="whatsappSendBtn" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-xl transition-all text-sm flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span>إرسال عبر الواتساب</span>
+                    </a>
+                    <button type="button" onclick="resetBookingModalView()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 px-4 rounded-xl transition-all text-sm">
+                        حجز موعد آخر
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Saved Bookings Modal (مواعيدي المحفوظة) -->
+    <div id="myBookingsModal" role="dialog" aria-modal="true" aria-labelledby="myBookingsTitle" class="modal-backdrop fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="modal-panel bg-white w-full max-w-lg rounded-3xl shadow-2xl border border-slate-100 overflow-hidden max-h-[85vh] flex flex-col">
+            <div class="bg-slate-900 p-5 text-white flex justify-between items-center">
+                <div>
+                    <h3 id="myBookingsTitle" class="text-lg font-extrabold">مواعيدي المحفوظة</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">سجل حجوزاتك على هذا الجهاز</p>
+                </div>
+                <button type="button" onclick="closeMyBookingsModal()" class="w-8 h-8 rounded-full bg-white/15 hover:bg-white/30 flex items-center justify-center text-white transition-all" aria-label="إغلاق">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="myBookingsList" class="p-5 space-y-3 overflow-y-auto flex-1"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 left-6 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-xl border border-slate-700 flex items-center gap-3 text-sm font-semibold translate-y-24 opacity-0 pointer-events-none">
+        <i id="toast-icon" class="fas fa-check-circle text-brand-cyan text-lg"></i>
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
